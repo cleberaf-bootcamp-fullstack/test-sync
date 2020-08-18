@@ -11,7 +11,6 @@ RUN sudo apt-get -q update && \
     sudo add-apt-repository “deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main” && \
     sudo apt-get -q update && \
     sudo apt install code && \
-    
     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/config-docker/
