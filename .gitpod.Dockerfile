@@ -6,9 +6,12 @@ USER gitpod
 # For example, the command below would install "bastet" - a command line tetris clone:
 #
 RUN sudo apt-get -q update && \
-    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -- && \
+    sudo wget -q https://packages.microsoft.com/keys/microsoft.asc && \
+    sudo apt-key add microsoft.asc && \
     sudo add-apt-repository “deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main” && \
+    sudo apt-get -q update && \
     sudo apt install code && \
+    
     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/config-docker/
